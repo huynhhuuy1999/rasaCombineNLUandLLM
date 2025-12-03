@@ -1,0 +1,42 @@
+recipe: default.v1
+language: vi
+assistant_id: legato-civet
+pipeline:
+  - name: WhitespaceTokenizer
+  - name: RegexFeaturizer
+  - name: LexicalSyntacticFeaturizer
+  - name: CountVectorsFeaturizer
+    analyzer: char_wb
+    min_ngram: 1
+    max_ngram: 4
+  - name: DIETClassifier
+    epochs: 100
+    constrain_similarities: true
+  - name: EntitySynonymMapper
+  - name: ResponseSelector
+    epochs: 100
+    constrain_similarities: true
+  - name: FallbackClassifier
+    threshold: 0.5
+    ambiguity_threshold: 0.1
+  - name: IntentBasedRouter
+    nlu_entry:
+      sticky:
+        - to_chuc_nghi_le
+      non_sticky:
+        - chitchat
+    calm_entry:
+      sticky:
+        - trach_nhiem_va_quyen_han
+        - quy_trinh_xay_dung_chuong_trinh_cong_tac
+  - name: CompactLLMCommandGenerator
+    llm:
+      model_group: rasa_command_generation_model
+    flow_retrieval:
+      active: false
+policies:
+  - name: FlowPolicy
+  - name: RulePolicy
+  - name: MemoizationPolicy
+    max_history: 10
+  - name: TEDPolicy

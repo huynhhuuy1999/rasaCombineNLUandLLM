@@ -1,0 +1,5 @@
+rasa-pro=3.13.10
+neo4j
+python-dotenv 
+'rasa-pro[nlu]'
+"rasa-pro[channels]"

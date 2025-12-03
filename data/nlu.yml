@@ -1,0 +1,21 @@
+version: "3.1"
+
+nlu:
+  - intent: to_chuc_nghi_le
+    examples: |
+      - Trường có những nghi lễ nào?
+      - Các nghi lễ ở trường là gì?
+      - Nói cho tôi biết về các nghi lễ của trường
+      - Trường tổ chức những nghi lễ nào?
+  - intent: trach_nhiem_va_quyen_han
+    examples: |
+      - Trách nhiệm và quyền hạn của [giảng viên]{"entity":"GiangVien"} là gì?
+      - Trách nhiệm và quyền hạn của [cán bộ chiến sĩ]{"entity":"CBCS"} là gì?
+      - Trách nhiệm và quyền hạn của [giảng viên thỉnh giảng]{"entity":"GiangVienThinhGiang"} là gì?
+  - intent: quy_trinh_xay_dung_chuong_trinh_cong_tac
+    examples: |
+      - Quy trình xây dựng chương trình công tác [năm]{"entity":"Nam"} như thế nào?
+      - Quy trình xây dựng chương trình công tác [học kỳ]{"entity":"HocKy"} ra sao?
+      - Quy trình xây dựng chương trình công tác [tháng]{"entity":"Thang"} như thế nào?
+      - Quy trình xây dựng chương trình công tác [quý]{"entity":"Quy"} như thế nào?
+      - Quy trình xây dựng chương trình công tác [tuần]{"entity":"Tuan"} như thế nào?

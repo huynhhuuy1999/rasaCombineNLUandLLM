@@ -1,0 +1,15 @@
+flows:
+  trach_nhiem_va_quyen_han:
+    name: trach_nhiem_va_quyen_han
+    description: Cung cấp thông tin về trách nhiệm và quyền hạn của các đối tượng khác nhau.
+    steps:
+      - collect: position
+        description: Lấy thông tin về trách nhiệm và quyền hạn dựa trên vị trí đã chọn.
+      - action: trachNhiemVaQuyenHanAction
+      - action: action_reset_routing
+  quyTrinhXayDungChuongTrinhCongTac:
+    name: quy_trinh_xay_dung_chuong_trinh_cong_tac
+    description: Cung cấp thông tin về quy trình xây dựng chương trình công tác theo các thời gian khác nhau.
+    steps:
+      - action: quyTrinhXayDungChuongTrinhCongTacAction
+      - action: action_reset_routing

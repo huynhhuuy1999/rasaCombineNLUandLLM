@@ -1,0 +1,12 @@
+- Bật facebook trong credentials
+- Mã xác nhận trong app facebook giống với verify trong credentials
+- run: rasa run --endpoints endpoints.yml --credentials credentials.yml 
+- run: ngrok http 5005
+
+Mỗi lần tắt ngrok:
+- vào app facebook: 
+    + Nhập lại webhook thông tin của ngrok (khi chạy lệnh ngrok http 5005 sẽ hiện thông tin cần nhập)
+    + Tạo lại gói đăng ký webhook, tick 2 cái (messages và message_postbacks)
+    + Vào nt với page
+
+'rasa-pro[nlu]'

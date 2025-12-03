@@ -1,0 +1,58 @@
+version: "3.1"
+
+# slots:
+#   recipient:
+#     type: text
+#     mappings:
+#       - type: from_llm
+#   amount:
+#     type: float
+#     mappings:
+#       - type: from_llm
+
+slots:
+  route_session_to_calm:
+    type: bool
+    influence_conversation: false
+  position:
+    type: categorical
+    values:
+      - giảng viên
+      - cán bộ chiến sĩ
+      - giảng viên thỉnh giảng
+    mappings:
+      - type: from_llm
+
+intents:
+  - to_chuc_nghi_le
+  - trach_nhiem_va_quyen_han
+  - quy_trinh_xay_dung_chuong_trinh_cong_tac
+actions:
+  - toChucNghiLeAction
+  - trachNhiemVaQuyenHanAction
+  - quyTrinhXayDungChuongTrinhCongTacAction
+entities:
+  - GiangVien
+  - CBCS
+  - GiangVienThinhGiang
+  - Nam
+  - HocKy
+  - Thang
+  - Quy
+  - Tuan
+responses:
+  utter_free_chitchat_response:
+    - text: "placeholder"
+      metadata:
+        rephrase: True
+        rephrase_prompt: |
+          The following is a conversation with an AI assistant built with Rasa.
+          The assistant can help the user transfer money.
+          The assistant is helpful, creative, clever, and very friendly.
+          The user is making small talk, and the assistant should respond, keeping things light.
+          Context / previous conversation with the user:
+          {{history}}
+          {{current_input}}
+          Suggested AI Response:
+  utter_ask_position:
+    - text: "Vui lòng cho biết vị trí của bạn (giảng viên, cán bộ chiến sĩ, giảng viên thỉnh giảng)?"
