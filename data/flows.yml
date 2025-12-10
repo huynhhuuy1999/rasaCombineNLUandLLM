@@ -6,10 +6,22 @@ flows:
       - collect: position
         description: Lấy thông tin về trách nhiệm và quyền hạn dựa trên vị trí đã chọn.
       - action: trachNhiemVaQuyenHanAction
+      - set_slots:
+          - position: null
       - action: action_reset_routing
   quyTrinhXayDungChuongTrinhCongTac:
     name: quy_trinh_xay_dung_chuong_trinh_cong_tac
     description: Cung cấp thông tin về quy trình xây dựng chương trình công tác theo các thời gian khác nhau.
     steps:
       - action: quyTrinhXayDungChuongTrinhCongTacAction
+      - action: action_reset_routing
+  phamViGiaiQuyetCongViec:
+    name: pham_vi_giai_quyet_cong_viec
+    description: Cung cấp thông tin về phạm vi giải quyết công việc dựa trên vị trí đã chọn.
+    steps:
+      - collect: positionResolve
+        description: Lấy thông tin về phạm vi giải quyết công việc dựa trên vị trí đã chọn.
+      - action: phamViGiaiQuyetCongViecAction
+      - set_slots:
+          - positionResolve: null
       - action: action_reset_routing

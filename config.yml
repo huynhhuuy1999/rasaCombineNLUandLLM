@@ -29,6 +29,7 @@ pipeline:
       sticky:
         - trach_nhiem_va_quyen_han
         - quy_trinh_xay_dung_chuong_trinh_cong_tac
+        - pham_vi_giai_quyet_cong_viec
   - name: CompactLLMCommandGenerator
     llm:
       model_group: rasa_command_generation_model

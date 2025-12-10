@@ -1,15 +1,5 @@
 version: "3.1"
 
-# slots:
-#   recipient:
-#     type: text
-#     mappings:
-#       - type: from_llm
-#   amount:
-#     type: float
-#     mappings:
-#       - type: from_llm
-
 slots:
   route_session_to_calm:
     type: bool
@@ -22,15 +12,50 @@ slots:
       - giảng viên thỉnh giảng
     mappings:
       - type: from_llm
+  time:
+    type: categorical
+    values:
+      - năm
+      - học kỳ
+      - tháng
+      - quý
+      - tuần
+    mappings:
+      - type: from_llm
+  positionResolve:
+    type: categorical
+    values:
+      - thủ trưởng
+      - phó thủ trưởng
+    mappings:
+      - type: from_llm
 
 intents:
   - to_chuc_nghi_le
   - trach_nhiem_va_quyen_han
   - quy_trinh_xay_dung_chuong_trinh_cong_tac
+  - nguyen_tac_lam_viec
+  - tham_quyen_phe_duyet_cuoc_hop
+  - trach_nhiem_thu_truong_trong_tiep_CBCS
+  - loai_hoi_nghi_va_hop
+  - loai_chuong_trinh_cong_tac
+  - trinh_tu_to_chuc_cuoc_hop_hoi_nghi
+  - pham_vi_giai_quyet_cong_viec
+  - chaohoi
+  - tambiet
 actions:
   - toChucNghiLeAction
   - trachNhiemVaQuyenHanAction
   - quyTrinhXayDungChuongTrinhCongTacAction
+  - nguyenTacLamViecAction
+  - thamQuyenPheDuyetCuocHopAction
+  - trachNhiemThuTruongTrongTiepCBCSAction
+  - loaiHoiNghiVaHopAction
+  - loaiChuongTrinhCongTacAction
+  - trinhTuToChucCuocHopHoiNghiAction
+  - Action_Chao_Hoi
+  - Action_Tam_Biet
+  - phamViGiaiQuyetCongViecAction
 entities:
   - GiangVien
   - CBCS
@@ -40,6 +65,7 @@ entities:
   - Thang
   - Quy
   - Tuan
+
 responses:
   utter_free_chitchat_response:
     - text: "placeholder"
@@ -56,3 +82,9 @@ responses:
           Suggested AI Response:
   utter_ask_position:
     - text: "Vui lòng cho biết vị trí của bạn (giảng viên, cán bộ chiến sĩ, giảng viên thỉnh giảng)?"
+  utter_chao_hoi:
+    - text: "Chào bạn! Tôi có thể giúp gì cho bạn hôm nay?"
+  utter_tam_biet:
+    - text: "Chào bạn! Hẹn gặp lại lần sau nhé!"
+  utter_ask_positionResolve:
+    - text: "Vui lòng cho biết vị trí của bạn (thủ trưởng, phó thủ trưởng)?"

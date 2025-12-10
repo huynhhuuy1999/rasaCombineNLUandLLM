@@ -6,13 +6,53 @@ rules:
       - intent: to_chuc_nghi_le
       - action: toChucNghiLeAction
       - action: action_reset_routing
-  - rule: trach_nhiem_va_quyen_han
+  - rule: nguyen_tac_lam_viec
     steps:
-      - intent: trach_nhiem_va_quyen_han
-      - action: trachNhiemVaQuyenHanAction
+      - intent: nguyen_tac_lam_viec
+      - action: nguyenTacLamViecAction
       - action: action_reset_routing
-  - rule: quy_trinh_xay_dung_chuong_trinh_cong_tac
+  - rule: tham_quyen_phe_duyet_cuoc_hop
     steps:
-      - intent: quy_trinh_xay_dung_chuong_trinh_cong_tac
-      - action: quyTrinhXayDungChuongTrinhCongTacAction
+      - intent: tham_quyen_phe_duyet_cuoc_hop
+      - action: thamQuyenPheDuyetCuocHopAction
       - action: action_reset_routing
+  - rule: trach_nhiem_thu_truong_trong_tiep_CBCS
+    steps:
+      - intent: trach_nhiem_thu_truong_trong_tiep_CBCS
+      - action: trachNhiemThuTruongTrongTiepCBCSAction
+      - action: action_reset_routing
+  - rule: loai_hoi_nghi_va_hop
+    steps:
+      - intent: loai_hoi_nghi_va_hop
+      - action: loaiHoiNghiVaHopAction
+      - action: action_reset_routing
+  - rule: loai_chuong_trinh_cong_tac
+    steps:
+      - intent: loai_chuong_trinh_cong_tac
+      - action: loaiChuongTrinhCongTacAction
+      - action: action_reset_routing
+  - rule: trinh_tu_to_chuc_cuoc_hop_hoi_nghi
+    steps:
+      - intent: trinh_tu_to_chuc_cuoc_hop_hoi_nghi
+      - action: trinhTuToChucCuocHopHoiNghiAction
+      - action: action_reset_routing
+
+  - rule: chaohoi
+    steps:
+      - intent: chaohoi
+      - action: Action_Chao_Hoi
+
+  - rule: tambiet
+    steps:
+      - intent: tambiet
+      - action: Action_Tam_Biet
+  # - rule: trach_nhiem_va_quyen_han
+  #   steps:
+  #     - intent: trach_nhiem_va_quyen_han
+  #     - action: trachNhiemVaQuyenHanAction
+  #     - action: action_reset_routing
+  # - rule: quy_trinh_xay_dung_chuong_trinh_cong_tac
+  #   steps:
+  #     - intent: quy_trinh_xay_dung_chuong_trinh_cong_tac
+  #     - action: quyTrinhXayDungChuongTrinhCongTacAction
+  #     - action: action_reset_routing

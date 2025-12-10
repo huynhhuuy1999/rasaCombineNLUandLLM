@@ -4,3 +4,4 @@ models
 tests
 .env
 actions/__pycache__
+results
