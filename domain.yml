@@ -53,8 +53,8 @@ actions:
   - loaiHoiNghiVaHopAction
   - loaiChuongTrinhCongTacAction
   - trinhTuToChucCuocHopHoiNghiAction
-  - Action_Chao_Hoi
-  - Action_Tam_Biet
+  # - Action_Chao_Hoi
+  # - Action_Tam_Biet
   - phamViGiaiQuyetCongViecAction
 entities:
   - GiangVien

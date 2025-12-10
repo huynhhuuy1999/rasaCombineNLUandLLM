@@ -200,24 +200,6 @@ class trinhTuToChucCuocHopHoiNghiAction(Action):
                 dispatcher.utter_message(text="Xin lỗi tôi không thể trả lời câu hỏi của bạn")
         
         return []
-class Action_Chao_Hoi(Action):
-    
-    def name(self) -> str:
-        return "Action_Chao_Hoi"
-
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker, domain: Dict[str, Any]):
-        dispatcher.utter_message(text="Chào bạn! Tôi có thể giúp gì cho bạn?")
-        return []
-class Action_Tam_Biet(Action):
-    
-    def name(self) -> str:
-        return "Action_Tam_Biet"
-
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker, domain: Dict[str, Any]):
-        dispatcher.utter_message(text="Tạm biệt! Chúc bạn một ngày tốt lành!")
-        return []
 class phamViGiaiQuyetCongViecAction(Action):
     
     def name(self) -> str:

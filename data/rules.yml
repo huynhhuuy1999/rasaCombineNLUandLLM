@@ -40,19 +40,9 @@ rules:
   - rule: chaohoi
     steps:
       - intent: chaohoi
-      - action: Action_Chao_Hoi
+      - action: utter_chao_hoi
 
   - rule: tambiet
     steps:
       - intent: tambiet
-      - action: Action_Tam_Biet
-  # - rule: trach_nhiem_va_quyen_han
-  #   steps:
-  #     - intent: trach_nhiem_va_quyen_han
-  #     - action: trachNhiemVaQuyenHanAction
-  #     - action: action_reset_routing
-  # - rule: quy_trinh_xay_dung_chuong_trinh_cong_tac
-  #   steps:
-  #     - intent: quy_trinh_xay_dung_chuong_trinh_cong_tac
-  #     - action: quyTrinhXayDungChuongTrinhCongTacAction
-  #     - action: action_reset_routing
+      - action: utter_tam_biet
