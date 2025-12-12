@@ -9,4 +9,8 @@ Mỗi lần tắt ngrok:
     + Tạo lại gói đăng ký webhook, tick 2 cái (messages và message_postbacks)
     + Vào nt với page
 
-'rasa-pro[nlu]'
+ 'rasa-pro[nlu]'
+
+Chạy với website:
+rasa run --enable-api --cors "*"
+rasa run actions  (option)
